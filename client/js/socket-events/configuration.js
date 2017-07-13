@@ -14,6 +14,7 @@ socket.on("configuration", function(data) {
 	$("#settings").html(templates.windows.settings(data));
 	$("#connect").html(templates.windows.connect(data));
 	$("#help").html(templates.windows.help(data));
+	$("#changelog").html(templates.windows.changelog(data));
 
 	$("#play").on("click", () => {
 		const pop = new Audio();
@@ -65,4 +66,18 @@ socket.on("configuration", function(data) {
 			// Store the "previous" value, for next time
 			$(this).data("lastvalue", nick);
 		});
+
+	$("#view-changelog").on("click", function() {
+		$("#windows > .active")
+			.removeClass("active")
+			.find(".chat")
+			.unsticky();
+
+		$("#changelog")
+			.addClass("active");
+
+		return false;
+	}).one("click", function() {
+		socket.emit("changelog");
+	});
 });

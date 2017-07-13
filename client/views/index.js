@@ -26,9 +26,11 @@ module.exports = {
 		settings: require("./windows/settings.tpl"),
 		connect: require("./windows/connect.tpl"),
 		help: require("./windows/help.tpl"),
+		changelog: require("./windows/changelog.tpl"),
 	},
 
 	chan: require("./chan.tpl"),
+	changelog: require("./changelog.tpl"),
 	chat: require("./chat.tpl"),
 	contextmenu_divider: require("./contextmenu_divider.tpl"),
 	contextmenu_item: require("./contextmenu_item.tpl"),
