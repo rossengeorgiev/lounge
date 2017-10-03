@@ -10,12 +10,10 @@ matrix:
     - node_js: 8 # Version used to deploy to npm registry
       env: BUILD_ENV=production
 
-cache:
-  directories:
-    - ~/.npm
+cache: yarn
 
 before_script:
-  - NODE_ENV=$BUILD_ENV npm run build
+  - NODE_ENV=$BUILD_ENV yarn run build
 
 notifications:
   email:
