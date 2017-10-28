@@ -1026,7 +1026,6 @@ kbd {
 	padding-right: 6px;
 }
 
-#loading a,
 #chat .special .time,
 #chat .special .from {
 	display: none;
@@ -1324,9 +1323,14 @@ part/quit messages where we don't load previews (adds a blank line otherwise) */
 	content: "Search Results";
 }
 
-#loading {
+#loading.active {
 	font-size: 14px;
 	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
 }
 
 #loading p {
@@ -1335,6 +1339,8 @@ part/quit messages where we don't load previews (adds a blank line otherwise) */
 
 #loading-slow {
 	display: none;
+	position: absolute;
+	bottom: 0;
 }
 
 #sign-in label {
